@@ -1,16 +1,43 @@
-# Blockchain Commons `$projectname`
+# Blockchain Commons bc-bytewords
 
-**`$ProjectDescription`** is …
+**Bytewords** is a method for encoding binary objects as a sequence of four-letter English words. `bc-bytewords` is a C implementation of a Bytewords codec.
 
-## Additional Information
+The Bytewords specification is fully described [here](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-012-bytewords.md).
 
-The following files contain…
+## Installation
 
-* `$ListOfEssentialDocs`
+```bash
+$ ./configure
+$ make check
+$ sudo make install
+```
+
+This sequence runs the module's unit tests.
+
+## Use
+
+1. Link against `libbc-bytewords.a`.
+2. Include the umbrella header in your code:
+
+```c
+#include <bc-bytewords/bc-bytewords.h>
+```
+
+## Notes for Maintainers
+
+Before accepting a PR that can affect build or unit tests, make sure the following sequence of commands succeeds:
+
+```bash
+$ ./configure
+$ make distcheck
+$ make distclean
+```
+
+`make distcheck` builds a distribution tarball, unpacks it, then configures, builds, and runs unit tests from it, then performs an install and uninstall from a non-system directory and makes sure the uninstall leaves it clean. `make distclean` removes all known byproduct files, and unless you've added files of your own, should leave the directory in a state that could be tarballed for distribution. After a `make distclean` you'll have to run `./configure` again.
 
 ## Status - Late Alpha
 
-` $projectname`  is currently under active development and in the late alpha testing phase. It should not be used for production tasks until it has had further testing and auditing.
+`Bytewords` is currently under active development and in the late alpha testing phase. It should not be used for production tasks until it has had further testing and auditing.
 
 ## Origin, Authors, Copyright & Licenses
 
@@ -22,31 +49,25 @@ This table below also establishes provenance (repository of origin, permalink, a
 
 | File      | From                                                         | Commit                                                       | Authors & Copyright (c)                                | License                                                     |
 | --------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------ | ----------------------------------------------------------- |
-| exception-to-the-rule.c or exception-folder | [https://github.com/community/repo-name/PERMALINK](https://github.com/community/repo-name/PERMALINK) | [https://github.com/community/repo-name/commit/COMMITHASH]() | 2020 Exception Author  | [MIT](https://spdx.org/licenses/MIT)                        |
+| | | | | |
 
 ### Dependencies
 
-To build  `$projectname` you'll need to use the following tools:
+To build Bytewords you'll need to use the following tools:
 
 - autotools - Gnu Build System from Free Software Foundation ([intro](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)).
 
-### Derived from…
-
-This  `$projectname` project is either derived from or was inspired by:
-
-- [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com).
-
 ### Used with…
 
-These are other projects that work with or leverage `$projectname`:
+These are other projects that work with or leverage Bytewords:
 
-- [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com).
+- [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer) or from [community](https://community.com).
 
 ## Financial Support
 
-`$projectname` is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
+Bytewords is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
 
-To financially support further development of `$projectname` and other projects, please consider becoming a Patron of Blockchain Commons through ongoing monthly patronage as a [GitHub Sponsor](https://github.com/sponsors/BlockchainCommons). You can also support Blockchain Commons with bitcoins at our [BTCPay Server](https://btcpay.blockchaincommons.com/).
+To financially support further development of Bytewords and other projects, please consider becoming a Patron of Blockchain Commons through ongoing monthly patronage as a [GitHub Sponsor](https://github.com/sponsors/BlockchainCommons). You can also support Blockchain Commons with bitcoins at our [BTCPay Server](https://btcpay.blockchaincommons.com/).
 
 ## Contributing
 
@@ -65,6 +86,7 @@ The following people directly contributed to this repository. You can add your n
 | Name              | Role                | Github                                            | Email                                 | GPG Fingerprint                                    |
 | ----------------- | ------------------- | ------------------------------------------------- | ------------------------------------- | -------------------------------------------------- |
 | Christopher Allen | Principal Architect | [@ChristopherA](https://github.com/ChristopherA) | \<ChristopherA@LifeWithAlacrity.com\> | FDFE 14A5 4ECB 30FC 5D22  74EF F8D3 6C91 3574 05ED |
+| Wolf McNally      | Project Lead        | [@WolfMcNally](https://github.com/wolfmcnally)    | \<Wolf@WolfMcNally.com\>              | 9436 52EE 3844 1760 C3DC  3536 4B6C 2FCF 8947 80AE |
 
 ## Responsible Disclosure
 

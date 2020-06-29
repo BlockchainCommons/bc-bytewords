@@ -87,3 +87,9 @@ Mkfile.old
 dkms.conf
 
 # End of https://www.gitignore.io/api/c
+
+Makefile
+config.h
+config.log
+config.status
+*.tar.gz

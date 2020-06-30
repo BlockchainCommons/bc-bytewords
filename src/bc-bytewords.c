@@ -147,7 +147,8 @@ char* bytewords_encode(bw_style style, const uint8_t* in_buf, size_t in_len) {
 
 static bool decode(const char* in_string, uint8_t** out_buf, size_t* out_len, char separator, size_t word_len) {
     size_t in_string_len = strlen(in_string);
-    size_t out_max_size = in_string_len / (word_len + 1) + 1;
+    size_t separator_len = separator == 0 ? 0 : 1;
+    size_t out_max_size = in_string_len / (word_len + separator_len) + 1;
     if(out_max_size < 5) return false;
     uint8_t* buf = malloc(out_max_size);
 

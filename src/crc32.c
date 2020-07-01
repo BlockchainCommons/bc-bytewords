@@ -6,7 +6,6 @@
 //
 
 #include "crc32.h"
-#include <memory.h>
 
 uint32_t crc32(const uint8_t* bytes, size_t len) {
     static uint32_t* table = NULL;

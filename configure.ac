@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([bc-bytewords], [0.1])
+AC_INIT([bc-bytewords], [0.1.1])
 AC_CONFIG_SRCDIR([src/bc-bytewords.c])
 AC_CONFIG_HEADERS([config.h])
 
@@ -11,6 +11,10 @@ AC_PROG_CC
 AC_PROG_INSTALL
 
 # Checks for libraries.
+AC_CHECK_LIB([bc-crypto-base], [crc32n], [], [
+  echo "### Error! libbc-crypto-base must be installed first."
+  exit -1
+  ])
 
 # Checks for header files.
 AC_CHECK_HEADERS([arpa/inet.h inttypes.h memory.h stdint.h stdlib.h string.h])

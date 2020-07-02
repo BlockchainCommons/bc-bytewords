@@ -11,14 +11,7 @@
 #include <string.h>
 
 #include "../src/bc-bytewords.h"
-#include "../src/crc32.h"
 #include "test-utils.h"
-
-static void testcrc32() {
-    char* input = "Hello, world!";
-    uint32_t checksum = crc32((const uint8_t*)input, strlen(input));
-    assert(checksum == 0xebe6c6e6);
-}
 
 static bool test_encode(bw_style style, const uint8_t input[], size_t input_len, const char* expected) {
     bool success = false;
@@ -118,7 +111,6 @@ void test2() {
 }
 
 int main() {
-    testcrc32();
     test1();
     test2();
 

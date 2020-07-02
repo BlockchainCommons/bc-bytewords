@@ -30,7 +30,7 @@ RESET=`tput sgr0`
 CFLAGS += -g -O0
 ARFLAGS = rcs
 
-OBJS = bc-bytewords.o crc32.o
+OBJS = bc-bytewords.o
 
 .PHONY: all lib
 all lib: $(libname)
@@ -38,8 +38,7 @@ all lib: $(libname)
 $(libname): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-bc-bytewords.o: bc-bytewords.h crc32.o
-crc32.o: crc32.h
+bc-bytewords.o: bc-bytewords.h
 
 HEADERS = bc-bytewords.h
 

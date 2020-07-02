@@ -9,14 +9,9 @@
 #include <string.h>
 #include <assert.h>
 #include <ctype.h>
-#include <arpa/inet.h>
-#include "crc32.h"
+#include <bc-crypto-base/bc-crypto-base.h>
 
 static const char* bytewords = "ableacidalsoapexaquaarchatomauntawayaxisbackbaldbarnbeltbetabiasbluebodybragbrewbulbbuzzcalmcashcatschefcityclawcodecolacookcostcruxcurlcuspcyandarkdatadaysdelidicedietdoordowndrawdropdrumdulldutyeacheasyechoedgeepicevenexamexiteyesfactfairfernfigsfilmfishfizzflapflewfluxfoxyfreefrogfuelfundgalagamegeargemsgiftgirlglowgoodgraygrimgurugushgyrohalfhanghardhawkheathelphighhillholyhopehornhutsicedideaidleinchinkyintoirisironitemjadejazzjoinjoltjowljudojugsjumpjunkjurykeepkenokeptkeyskickkilnkingkitekiwiknoblamblavalazyleaflegsliarlistlimplionlogoloudloveluaulucklungmainmanymathmazememomenumeowmildmintmissmonknailnavyneednewsnextnoonnotenumbobeyoboeomitonyxopenovalowlspaidpartpeckplaypluspoempoolposepuffpumapurrquadquizraceramprealredorichroadrockroofrubyruinrunsrustsafesagascarsetssilkskewslotsoapsolosongstubsurfswantacotasktaxitenttiedtimetinytoiltombtoystriptunatwinuglyundouniturgeuservastveryvetovialvibeviewvisavoidvowswallwandwarmwaspwavewaxywebswhatwhenwhizwolfworkyankyawnyellyogayurtzapszestzinczonezoomzero";
-
-static uint32_t bytewords_hash(const uint8_t* bytes, size_t len) {
-    return htonl(crc32(bytes, len));
-}
 
 static bool decode_word(const char* in_word, size_t word_len, uint8_t* out_index) {
     static int16_t* array = NULL;
@@ -95,7 +90,7 @@ static char* encode(const uint8_t* in_buf, size_t in_len, char* out_buf, char se
 }
 
 static size_t add_crc(const uint8_t* in_buf, size_t in_len, uint8_t** in_with_crc_buf) {
-    uint32_t crc = bytewords_hash(in_buf, in_len);
+    uint32_t crc = crc32n(in_buf, in_len);
     size_t in_with_crc_len = in_len + sizeof(crc);
     *in_with_crc_buf = malloc(in_with_crc_len);
     memcpy(*in_with_crc_buf, in_buf, in_len);
@@ -175,7 +170,7 @@ static bool decode(const char* in_string, uint8_t** out_buf, size_t* out_len, ch
 
     size_t body_len = buf_len - sizeof(uint32_t);
     uint8_t* buf_checksum = buf + body_len;
-    uint32_t checksum = bytewords_hash(buf, body_len);
+    uint32_t checksum = crc32n(buf, body_len);
     if(memcmp(&checksum, buf_checksum, sizeof(uint32_t)) != 0) {
         goto fail;
     }

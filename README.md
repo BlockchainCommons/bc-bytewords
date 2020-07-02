@@ -4,6 +4,10 @@
 
 The Bytewords specification is fully described [here](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-012-bytewords.md).
 
+## Prerequisites
+
+* If [`bc-crypto-base`](https://github.com/blockchaincommons/bc-crypto-base) is not installed, the `configure` step below will fail.
+
 ## Installation
 
 ```bash
@@ -105,3 +109,13 @@ The following keys may be used to communicate sensitive information to developer
 | Christopher Allen | FDFE 14A5 4ECB 30FC 5D22  74EF F8D3 6C91 3574 05ED |
 
 You can import a key by running the following command with that individual’s fingerprint: `gpg --recv-keys "<fingerprint>"` Ensure that you put quotes around fingerprints that contain spaces.
+
+## Version History
+
+### 0.1.1, 7/1/2020
+
+* Moved to depending on bc-crypto-base for calculation of CRC32 checksum.
+
+### 0.1.0, 6/3/2020
+
+* Initial release.

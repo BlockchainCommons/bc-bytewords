@@ -68,7 +68,7 @@ static bool decode_word(const char* in_word, size_t word_len, uint8_t* out_index
     return true;
 }
 
-static void get_word(uint8_t index, char* word) {
+void bytewords_get_word(uint8_t index, char* word) {
     memcpy(word, &bytewords[index * 4], 4);
     word[4] = '\0';
 }
@@ -85,7 +85,7 @@ static char* encode(const uint8_t* in_buf, size_t in_len, char* out_buf, char se
     char* out_p = out_buf;
     for(int i = 0; i < in_len; i++) {
         uint8_t index = *in_p++;
-        get_word(index, out_p);
+        bytewords_get_word(index, out_p);
         if(i < in_len - 1) {
             out_p[4] = separator;
         }

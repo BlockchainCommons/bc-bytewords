@@ -93,3 +93,4 @@ config.h
 config.log
 config.status
 *.tar.gz
+autom4te.cache/

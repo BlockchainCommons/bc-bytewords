@@ -51,13 +51,13 @@ finish:
 void test1() {
     uint8_t input[] = {0, 1, 2, 128, 255};
     size_t input_len = 5;
-    assert(test_encode(bw_standard, input, input_len, "able acid also lava zero jade need echo taxi"));
-    assert(test_encode(bw_uri, input, input_len, "able-acid-also-lava-zero-jade-need-echo-taxi"));
-    assert(test_encode(bw_minimal, input, input_len, "aeadaolazojendeoti"));
+    assert(test_encode(bw_standard, input, input_len, "able acid also lava zoom jade need echo taxi"));
+    assert(test_encode(bw_uri, input, input_len, "able-acid-also-lava-zoom-jade-need-echo-taxi"));
+    assert(test_encode(bw_minimal, input, input_len, "aeadaolazmjendeoti"));
 
-    assert(test_decode(bw_standard, "able acid also lava zero jade need echo taxi", input, input_len));
-    assert(test_decode(bw_uri, "able-acid-also-lava-zero-jade-need-echo-taxi", input, input_len));
-    assert(test_decode(bw_minimal, "aeadaolazojendeoti", input, input_len));
+    assert(test_decode(bw_standard, "able acid also lava zoom jade need echo taxi", input, input_len));
+    assert(test_decode(bw_uri, "able-acid-also-lava-zoom-jade-need-echo-taxi", input, input_len));
+    assert(test_decode(bw_minimal, "aeadaolazmjendeoti", input, input_len));
 
     // bad checksum
     assert(!test_decode(bw_standard, "able acid also lava zero jade need echo wolf", input, input_len));
@@ -86,25 +86,25 @@ void test2() {
 
     char* encoded =
     "yank toys bulb skew when warm free fair tent swan "
-    "open brag mint noon jury lion view tiny brew note "
-    "body data webs what zone bald join runs data whiz "
-    "days keys user diet news ruby whiz zoom menu surf "
+    "open brag mint noon jury list view tiny brew note "
+    "body data webs what zinc bald join runs data whiz "
+    "days keys user diet news ruby whiz zone menu surf "
     "flew omit trip pose runs fund part even crux fern "
     "math visa tied loud redo silk curl jugs hard beta "
     "next cost puma drum acid junk swan free very mint "
-    "flap warm fact math flap what list free jugs yell "
+    "flap warm fact math flap what limp free jugs yell "
     "fish epic whiz open numb math city belt glow wave "
-    "list fuel grim free zoom open love diet gyro cats "
+    "limp fuel grim free zone open love diet gyro cats "
     "fizz holy city puff";
     assert(test_encode(bw_standard, input, input_len, encoded));
     assert(test_decode(bw_standard, encoded, input, input_len));
 
     char* encoded_minimal =
-    "yktsbbswwnwmfefrttsnonbgmtnnjylnvwtybwne"
-    "bydawswtzebdjnrsdawzdsksurdtnsrywzzmmusf"
+    "yktsbbswwnwmfefrttsnonbgmtnnjyltvwtybwne"
+    "bydawswtzcbdjnrsdawzdsksurdtnsrywzzemusf"
     "fwottppersfdptencxfnmhvatdldroskcljshdba"
-    "ntctpadmadjksnfevymtfpwmftmhfpwtltfejsyl"
-    "fhecwzonnbmhcybtgwweltflgmfezmonledtgocs"
+    "ntctpadmadjksnfevymtfpwmftmhfpwtlpfejsyl"
+    "fhecwzonnbmhcybtgwwelpflgmfezeonledtgocs"
     "fzhycypf";
     assert(test_encode(bw_minimal, input, input_len, encoded_minimal));
     assert(test_decode(bw_minimal, encoded_minimal, input, input_len));

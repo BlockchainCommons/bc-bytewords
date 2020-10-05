@@ -112,6 +112,10 @@ You can import a key by running the following command with that individual’s f
 
 ## Version History
 
+### 0.2.0, 10/4/2020
+
+* Fix for [https://github.com/BlockchainCommons/Research/issues/45](wordlist alphabetization error).
+
 ### 0.1.1, 7/1/2020
 
 * Moved to depending on bc-crypto-base for calculation of CRC32 checksum.

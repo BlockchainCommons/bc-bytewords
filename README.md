@@ -1,5 +1,7 @@
 # Blockchain Commons bc-bytewords
 
+### _by Wolf McNally and Christopher Allen_
+
 **Bytewords** is a method for encoding binary objects as a sequence of four-letter English words. `bc-bytewords` is a C implementation of a Bytewords codec.
 
 The Bytewords specification is fully described [here](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-012-bytewords.md).
@@ -8,7 +10,7 @@ The Bytewords specification is fully described [here](https://github.com/Blockch
 
 * If [`bc-crypto-base`](https://github.com/blockchaincommons/bc-crypto-base) is not installed, the `configure` step below will fail.
 
-## Installation
+## Installation Instructions
 
 ```bash
 $ ./configure
@@ -18,7 +20,7 @@ $ sudo make install
 
 This sequence runs the module's unit tests.
 
-## Use
+## Usage Instructions
 
 1. Link against `libbc-bytewords.a`.
 2. Include the umbrella header in your code:

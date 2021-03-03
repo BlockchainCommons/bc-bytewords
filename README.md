@@ -54,13 +54,7 @@ $ make distclean
 
 Unless otherwise noted (either in this [/README.md](./README.md) or in the file's header comments) the contents of this repository are Copyright © 2020 by Blockchain Commons, LLC, and are [licensed](./LICENSE) under the [spdx:BSD-2-Clause Plus Patent License](https://spdx.org/licenses/BSD-2-Clause-Patent.html).
 
-In most cases, the authors, copyright, and license for each file reside in header comments in the source code. When it does not, we have attempted to attribute it accurately in the table below.
-
-This table below also establishes provenance (repository of origin, permalink, and commit id) for files included from repositories that are outside of this repo. Contributors to these files are listed in the commit history for each repository, first with changes found in the commit history of this repo, then in changes in the commit history of their repo of their origin.
-
-| File      | From                                                         | Commit                                                       | Authors & Copyright (c)                                | License                                                     |
-| --------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------ | ----------------------------------------------------------- |
-| | | | | |
+The authors, copyright, and license for each file reside in header comments in the source code.
 
 ### Dependencies
 
@@ -72,7 +66,7 @@ To build Bytewords you'll need to use the following tools:
 
 These are other projects that work with or leverage Bytewords:
 
-- [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer) or from [community](https://community.com).
+- [lethekit](https://github.com/BlockchainCommons/bc-lethekit) — Open source DIY hardware box for offline cryptographic tools by [Blockchain Commons](https://github.com/BlockchainCommons).
 
 ## Financial Support
 

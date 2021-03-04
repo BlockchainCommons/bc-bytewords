@@ -51,6 +51,12 @@ char* bytewords_encode(bw_style style, const uint8_t* in_buf, size_t in_len);
 // The memory pointed to `out_buf` and `out_len` will not be changed if the decode fails.
 bool bytewords_decode(bw_style style, const char* in_string, uint8_t** out_buf, size_t* out_len);
 
+// Get byteword at specified index
+// Arguments:
+//    `index`: index in byteword list
+//    `word`: byteword at that index (allocate 5 bytes)
+void bytewords_get_word(uint8_t index, char* word);
+
 #ifdef __cplusplus
 }
 #endif

@@ -11,6 +11,7 @@ The Bytewords specification is fully described [here](https://github.com/Blockch
 ## Prerequisites
 
 * If [`bc-crypto-base`](https://github.com/blockchaincommons/bc-crypto-base) is not installed, the `configure` step below will fail.
+* If on Debian Linux make sure you have `build-essential` package installed: `$ sudo apt-get install build-essential`
 
 ## Installation Instructions
 
